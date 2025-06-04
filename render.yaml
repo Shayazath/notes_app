@@ -2,8 +2,10 @@ services:
   - type: web
     name: notes-app
     env: python
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn notes_app.wsgi:application"
+    buildCommand: |
+      pip install -r requirements.txt
+      python manage.py collectstatic --noinput
+    startCommand: gunicorn notes_app.notes_app.wsgi:application
     envVars:
       - key: DJANGO_SETTINGS_MODULE
-        value: notes_app.settings
+        value: notes_app.notes_app.settings
