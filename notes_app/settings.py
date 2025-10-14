@@ -101,9 +101,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'notes',
-        'USER': 'root',
-        'PASSWORD': 'shayaz',
-        'HOST': 'localhost',
+        'USER': 'shayaz',
+        'PASSWORD': 'SHAYAzath',
+        'HOST': 'database-1.checoeyc27qx.ap-south-1.rds.amazonaws.com',
         'PORT': '3306',
     }
 }
