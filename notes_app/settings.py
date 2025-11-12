@@ -27,16 +27,16 @@ DEBUG = True
 import os
 
 ALLOWED_HOSTS = ['*']
-# Static files (CSS, JavaScript, Images)
-STATIC_URL = '/static/'                     # Always include the leading slash
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Collected static files for production
+# ✅ Static files (CSS, JavaScript, Images)
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# Only include this if you have a local "static" folder during development
+# ✅ Tell Django where your actual static files are (your screenshot shows myapp/static_css)
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'myapp', 'static_css'),
 ]
 
-# WhiteNoise configuration (for serving static files)
+# ✅ WhiteNoise configuration (for serving static files in production)
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Application definition
 
