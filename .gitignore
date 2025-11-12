@@ -1,0 +1,15 @@
+.idea/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+env/
+venv/
+migrations/
+.env
+firebaseKey.json
+.venv
+# Celery
+celerybeat-schedule*
+celerybeat.pid
