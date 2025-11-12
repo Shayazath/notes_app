@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(199, 118, 118);
+  background-color: rgba(27, 120, 114, 0.412);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,7 +21,7 @@ h1:hover{
 
 }
 .form-box {
-  background-color: rgb(229, 232, 140);
+  background-color: rgb(179, 219, 255);
   border-radius: 20px;
   display: flex;
   align-items: center;
