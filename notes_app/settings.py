@@ -27,12 +27,17 @@ DEBUG = True
 import os
 
 ALLOWED_HOSTS = ['*']
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = '/static/'
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = '/static/'                     # Always include the leading slash
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Collected static files for production
+
+# Only include this if you have a local "static" folder during development
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),  # only if you have a /static folder with CSS, JS
+    os.path.join(BASE_DIR, 'static'),
 ]
 
+# WhiteNoise configuration (for serving static files)
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Application definition
 
 INSTALLED_APPS = [
