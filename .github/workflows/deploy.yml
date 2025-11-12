@@ -23,4 +23,4 @@ jobs:
         run: sudo systemctl daemon-reload
 
       - name: Restart Notes App Service
-        run: sudo systemctl restart hrmsv2.service
+        run: sudo systemctl restart gunicorn
