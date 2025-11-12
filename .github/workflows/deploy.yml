@@ -1,0 +1,26 @@
+name: Deploy to EC2
+
+on:
+  push:
+    branches:
+      - master  # Triggers when you push to the master branch
+
+jobs:
+  deploy:
+    runs-on: self-hosted  # Uses your EC2 self-hosted runner
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Update Code from Repository
+        working-directory: /home/ubuntu/notes
+        run: |
+          sudo git checkout master
+          sudo git pull origin master
+
+      - name: Reload Daemon
+        run: sudo systemctl daemon-reload
+
+      - name: Restart Notes App Service
+        run: sudo systemctl restart hrmsv2.service
