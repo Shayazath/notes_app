@@ -3,7 +3,7 @@ name: Deploy to EC2
 on:
   push:
     branches:
-      - master  # Triggers when you push to the master branch
+      - master  # Trigger deployment when pushing to master branch
 
 jobs:
   deploy:
@@ -18,6 +18,12 @@ jobs:
         run: |
           sudo git checkout master
           sudo git pull origin master
+
+      - name: Activate Virtual Environment & Collect Static Files
+        working-directory: /home/ubuntu/notes
+        run: |
+          source venv/bin/activate
+          python3 manage.py collectstatic --noinput
 
       - name: Reload Daemon
         run: sudo systemctl daemon-reload
