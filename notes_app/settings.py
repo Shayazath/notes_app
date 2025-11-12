@@ -33,7 +33,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # ✅ Tell Django where your actual static files are (your screenshot shows myapp/static_css)
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'myapp', 'static_css'),
+    os.path.join(BASE_DIR, 'myapp', 'static' ,'css'),
 ]
 
 # ✅ WhiteNoise configuration (for serving static files in production)
